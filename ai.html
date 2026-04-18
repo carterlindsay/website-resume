@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🍎 Fruity Snake: Force Start Edition 🐍</title>
+    <style>
+        body {
+            margin: 0;
+            background: #d2cabb;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #game-box {
+            position: relative;
+            border: 10px solid #669bbc;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            background: white;
+        }
+
+        canvas { display: block; }
+
+        .ui-panel {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 12px 40px;
+            font-size: 22px;
+            cursor: pointer;
+            background: #d6636b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        button:hover { background: #780000; transform: scale(1.05); }
+        
+        #status { color: #003049; font-weight: bold; margin-bottom: 10px; font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+
+    <div id="status">Score: <span id="scoreText">0</span></div>
+
+    <div id="game-box">
+        <canvas id="snakeGame" width="400" height="400"></canvas>
+    </div>
+
+    <div class="ui-panel">
+        <button id="playBtn">START GAME</button>
+        <p style="color: #669bbc;">Use Arrow Keys to move!</p>
+    </div>
+
+<script>
+    // 1. Setup Variables
+    const canvas = document.getElementById("snakeGame");
+    const ctx = canvas.getContext("2d");
+    const scoreText = document.getElementById("scoreText");
+    const playBtn = document.getElementById("playBtn");
+
+    const grid = 20;
+    const tiles = canvas.width / grid;
+
+    let snake = [{x: 10, y: 10}, {x: 9, y: 10}, {x: 8, y: 10}];
+    let fruit = {x: 5, y: 5, icon: "🍎"};
+    let dx = 0;
+    let dy = 0;
+    let score = 0;
+    let active = false;
+    const fruitIcons = ["🍎", "🍊", "🍇", "🍓", "🍒", "🍍", "🥭"];
+
+    // 2. The Main Game Loop
+    function main() {
+        if (active) {
+            update();
+        }
+        draw();
+    }
+
+    // 3. Update Logic
+    function update() {
+        const head = {x: snake[0].x + dx, y: snake[0].y + dy};
+
+        // Collision: Walls
+        if (head.x < 0 || head.x >= tiles || head.y < 0 || head.y >= tiles) return reset();
+
+        // Collision: Self
+        for (let s of snake) {
+            if (s.x === head.x && s.y === head.y) return reset();
+        }
+
+        snake.unshift(head);
+
+        // Check if eating fruit
+        if (head.x === fruit.x && head.y === fruit.y) {
+            score++;
+            scoreText.innerText = score;
+            spawnFruit();
+        } else {
+            snake.pop();
+        }
+    }
+
+    // 4. Draw Logic
+    function draw() {
+        // Background
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Grid lines (faint)
+        ctx.strokeStyle = "#f1f1f1";
+        for(let i=0; i<canvas.width; i+=grid) {
+            ctx.beginPath(); ctx.moveTo(i,0); ctx.lineTo(i,400); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(0,i); ctx.lineTo(400,i); ctx.stroke();
+        }
+
+        // Draw Fruit
+        ctx.font = "18px Arial";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(fruit.icon, fruit.x * grid + grid/2, fruit.y * grid + grid/2);
+
+        // Draw Snake
+        snake.forEach((part, index) => {
+            const hue = (index * 15 + score * 5) % 360;
+            ctx.fillStyle = `hsl(${hue}, 80%, 55%)`;
+            
+            // Rounded look
+            ctx.beginPath();
+            ctx.roundRect(part.x * grid + 1, part.y * grid + 1, grid - 2, grid - 2, 5);
+            ctx.fill();
+
+            if (index === 0) { // Eyes
+                ctx.fillStyle = "white";
+                ctx.beginPath();
+                ctx.arc(part.x * grid + 6, part.y * grid + 6, 2, 0, Math.PI*2);
+                ctx.arc(part.x * grid + 14, part.y * grid + 6, 2, 0, Math.PI*2);
+                ctx.fill();
+            }
+        });
+    }
+
+    function spawnFruit() {
+        fruit.x = Math.floor(Math.random() * tiles);
+        fruit.y = Math.floor(Math.random() * tiles);
+        fruit.icon = fruitIcons[Math.floor(Math.random() * fruitIcons.length)];
+    }
+
+    function reset() {
+        active = false;
+        alert("Game Over! Score: " + score);
+        snake = [{x: 10, y: 10}, {x: 9, y: 10}, {x: 8, y: 10}];
+        dx = 0; dy = 0;
+        score = 0;
+        scoreText.innerText = 0;
+        playBtn.innerText = "RESTART GAME";
+    }
+
+    // 5. Input Handling
+    playBtn.addEventListener("click", () => {
+        if (!active) {
+            active = true;
+            dx = 1; dy = 0; // Move right instantly
+            playBtn.innerText = "PLAYING...";
+        }
+    });
+
+    window.addEventListener("keydown", (e) => {
+        if (!active) return;
+        if (e.key === "ArrowUp" && dy === 0) { dx = 0; dy = -1; }
+        if (e.key === "ArrowDown" && dy === 0) { dx = 0; dy = 1; }
+        if (e.key === "ArrowLeft" && dx === 0) { dx = -1; dy = 0; }
+        if (e.key === "ArrowRight" && dx === 0) { dx = 1; dy = 0; }
+    });
+
+    // 6. Start the clock
+    setInterval(main, 110);
+</script>
+
+</body>
+</html>
