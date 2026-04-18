@@ -1,87 +1,191 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Republica Dominicana</title>
-    <link rel="stylesheet" href="css/mystyles.css">
+    <title>Mi Misión — Dominican Republic | Lindsay Carter</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/scratch.css">
 </head>
 <body>
-    <h1>The Dominican Republic</h1>
 
-    <div class="text-box">
-
-    <h2 id="places">Best Places to Visit</h2> 
-    <ul>
-        <li>Punta Cana</li>
-        <li>Santo Domingo</li>
-        <li>Santiago</li>
-        <li>Semana</li>
-        <li>Puerto Plata</li>
-    </ul>
-
-    <h2>Foods and Drinks to Try!</h2>
-    <ol>
-        <li>
-            <ul>
-                <li>La Bandera</li>
-                <li>Sancocho</li>
-                <li>Mangú</li>
-            </ul>
-        </li>
-        <li>
-            <ul>
-                <li>Morir Soñando</li>
-                <li>Kola Real</li>
-            </ul>
-        </li>
-    </ol>
+    <!-- ── STICKY BACK BAR ─────────────────────────────── -->
+    <div class="sc-back-bar">
+        <a href="about.html" class="sc-back-link">&#8592; Back to Resume</a>
+        <span class="sc-site-name">Lindsay Carter</span>
     </div>
 
+    <!-- ── IN-PAGE ANCHOR NAV ──────────────────────────── -->
+    <nav class="sc-page-nav">
+        <a href="#places">Destinations</a>
+        <a href="#food">Food &amp; Drinks</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#video">Video</a>
+        <a href="#data">World Data</a>
+    </nav>
 
-    <br>
-    <p>Make sure to book your flight to the Dominican Republic!</p>
-    <div class="collage">
-    <img src="assets/img/punta-cana-excursions_saona-island-tour.webp" alt="PuntaCana" width="350">
-    <img src="assets/img/Samana-Dominican-Republic-20-Playa-Fronton-scaled.jpg" alt="Samana" width="350">
-    <img src="assets/img/images.jpeg" alt="La Bandera" width="375">
-    <img src="assets/img/360_F_516098739_qUVeKsFCE5rKp9TDG6r7HUCyZThT6fxh.jpg" alt="PuertoPlata" width="300">
-    <img src="assets/img/colombian-rib-soup--sancocho-de-costilla--465487675-1381f071dbd94c5e847f8dd52e193c39.jpg" alt="Sancocho" width="300">
-    <img src="assets/img/06b477c7-e6d7-48e9-9a21-b44e69f4f115.webp" alt="Santo Domingo" width="350">
-    <img src="assets/img/images-3.jpeg" alt="Cristo" width="300">
-    <img src="assets/img/Unknown.jpeg" alt="Juice" width="375">
+    <!-- ── HERO ────────────────────────────────────────── -->
+    <header class="sc-hero">
+        <div class="sc-hero-tag">July 2024 &ndash; December 2025</div>
+        <h1>My Mission:<br>The Dominican Republic</h1>
+        <p class="sc-hero-sub">Santiago &middot; Sister Training Leader &middot; 18 Months of Service</p>
+    </header>
 
-</body>
-</html>
-    
-    </div> 
+    <!-- ── INTRODUCTION ────────────────────────────────── -->
+    <section class="sc-section">
+        <div class="sc-container">
+            <div class="sc-intro-card">
+                <p>I served as a full-time missionary in Santiago, Dominican Republic from July 2024 to December 2025 — one of the most transformative 18 months of my life. I led and trained sister missionaries, discovered a vibrant new culture, and grew in faith and character more than I ever expected.</p>
+                <p>Below is a window into the beautiful country that became my second home. ¡Que viva la República Dominicana!</p>
+            </div>
+        </div>
+    </section>
 
-    <div class="video-container" id="video-section">
-        <h2>Explore the Dominican Republic</h2>
-        <iframe width="560" height="315" 
-            src="https://www.youtube.com/embed/Z0ophMFKdbM" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allowfullscreen>
-        </iframe>
-    </div>
+    <!-- ── BEST PLACES (id anchor + nested list) ───────── -->
+    <section class="sc-section sc-yellow-bg" id="places">
+        <div class="sc-container">
+            <h2 class="sc-section-title">&#9992; Best Places to Visit</h2>
 
-    <div class="nav-footer">
-        <p>
-            <a href="index.html">Back to Professional Site</a> | 
-            <a href="#places">Back to Top of Destinations</a>
-        </p>
-    </div>
+            <!-- REQUIREMENT: ordered list with embedded unordered lists -->
+            <ol class="sc-destination-list">
+                <li>
+                    <strong>Beach &amp; Coast</strong>
+                    <ul>
+                        <li><span class="sc-place-name">Punta Cana</span> — world-famous white sand beaches and resort paradise on the eastern coast</li>
+                        <li><span class="sc-place-name">Samaná</span> — breathtaking cliffs, hidden beaches, and humpback whale watching every winter</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Cities &amp; Culture</strong>
+                    <ul>
+                        <li><span class="sc-place-name">Santiago</span> — my mission city, warm and vibrant with wonderful people</li>
+                        <li><span class="sc-place-name">Santo Domingo</span> — the capital, rich with colonial history and architecture</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Mountains &amp; Nature</strong>
+                    <ul>
+                        <li><span class="sc-place-name">Puerto Plata</span> — colorful Victorian architecture, a cable car, and stunning ocean views</li>
+                        <li><span class="sc-place-name">Jarabacoa</span> — the "City of Everlasting Spring," mountain rafting and waterfalls</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </section>
 
-</body>
-</html>
-    
+    <!-- ── FOOD & DRINKS ───────────────────────────────── -->
+    <section class="sc-section" id="food">
+        <div class="sc-container">
+            <h2 class="sc-section-title">&#127859; Foods &amp; Drinks to Try</h2>
+            <div class="sc-grid-2">
+                <div class="sc-food-card">
+                    <h4 class="sc-food-label">Traditional Dishes</h4>
+                    <ul>
+                        <li><strong>La Bandera</strong> — rice, beans &amp; meat; the beloved national dish eaten daily</li>
+                        <li><strong>Sancocho</strong> — hearty stew with root vegetables and meat, served at celebrations</li>
+                        <li><strong>Mangú</strong> — mashed plantains with pickled onions, a breakfast staple everywhere</li>
+                        <li><strong>Tostones</strong> — twice-fried green plantain slices, crispy and delicious</li>
+                    </ul>
+                </div>
+                <div class="sc-food-card">
+                    <h4 class="sc-food-label">Drinks</h4>
+                    <ul>
+                        <li><strong>Morir Soñando</strong> — literally "die dreaming" — creamy orange juice and milk; absolutely incredible</li>
+                        <li><strong>Kola Real</strong> — the beloved local cola, a Dominican classic at every meal</li>
+                        <li><strong>Mabí</strong> — a traditional fermented bark drink, sweet and unique</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <a href="#places">Back to Top of Destinations</a> 
-    
+    <!-- ── PHOTO GALLERY ───────────────────────────────── -->
+    <section class="sc-section sc-yellow-bg" id="gallery">
+        <div class="sc-container">
+            <h2 class="sc-section-title">&#128247; Photo Gallery</h2>
+            <div class="sc-collage">
+                <img src="assets/img/punta-cana-excursions_saona-island-tour.webp" alt="Punta Cana — Saona Island">
+                <img src="assets/img/Samana-Dominican-Republic-20-Playa-Fronton-scaled.jpg" alt="Samaná — Playa Frontón">
+                <img src="assets/img/images.jpeg" alt="La Bandera — the national dish">
+                <img src="assets/img/360_F_516098739_qUVeKsFCE5rKp9TDG6r7HUCyZThT6fxh.jpg" alt="Puerto Plata">
+                <img src="assets/img/colombian-rib-soup--sancocho-de-costilla--465487675-1381f071dbd94c5e847f8dd52e193c39.jpg" alt="Sancocho stew">
+                <img src="assets/img/06b477c7-e6d7-48e9-9a21-b44e69f4f115.webp" alt="Santo Domingo">
+                <img src="assets/img/images-3.jpeg" alt="Cristo del Perdón">
+                <img src="assets/img/Unknown.jpeg" alt="Morir Soñando">
+            </div>
+        </div>
+    </section>
 
+    <!-- ── YOUTUBE VIDEO ───────────────────────────────── -->
+    <section class="sc-section" id="video">
+        <div class="sc-container sc-text-center">
+            <h2 class="sc-section-title sc-centered">&#9654; Explore the Dominican Republic</h2>
+            <p class="sc-section-desc">Watch this video to get a feel for the stunning landscapes and culture of the Dominican Republic.</p>
+            <div class="sc-video-wrap">
+                <iframe
+                    width="100%"
+                    height="430"
+                    src="https://www.youtube.com/embed/Z0ophMFKdbM"
+                    title="Dominican Republic Travel"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
 
+    <!-- ── TABLEAU EMBED ───────────────────────────────── -->
+    <section class="sc-section sc-yellow-bg" id="data">
+        <div class="sc-container">
+            <h2 class="sc-section-title">&#128200; The DR on the World Stage</h2>
+            <p class="sc-section-desc">See how the Dominican Republic compares to other countries across key global indicators. Use the interactive controls to filter and explore the data.</p>
+            <div class="sc-tableau-wrap">
+                <div class="tableauPlaceholder" id="viz1234567890" style="position:relative">
+                    <noscript>
+                        <a href="https://public.tableau.com/views/WorldIndicators/GDPpercapita">
+                            <img alt="World Indicators — GDP per Capita" src="https://public.tableau.com/static/images/Wo/WorldIndicators/GDPpercapita/1_rss.png" style="border:none">
+                        </a>
+                    </noscript>
+                    <object class="tableauViz" style="display:none">
+                        <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F">
+                        <param name="embed_code_version" value="3">
+                        <param name="site_root" value="">
+                        <param name="name" value="WorldIndicators/GDPpercapita">
+                        <param name="tabs" value="no">
+                        <param name="toolbar" value="yes">
+                        <param name="animate_transition" value="yes">
+                        <param name="display_static_image" value="yes">
+                        <param name="display_spinner" value="yes">
+                        <param name="display_overlay" value="yes">
+                        <param name="display_count" value="yes">
+                        <param name="language" value="en-US">
+                    </object>
+                </div>
+                <script type="text/javascript">
+                    var divElement = document.getElementById('viz1234567890');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    if (divElement.offsetWidth > 800) {
+                        vizElement.style.width = '100%';
+                        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                    } else {
+                        vizElement.style.width = '100%';
+                        vizElement.style.height = '500px';
+                    }
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER / BACK BUTTON ────────────────────────── -->
+    <footer class="sc-footer">
+        <a href="about.html" class="sc-back-btn">&#8592; Back to My Resume</a>
+        <p class="sc-footer-note">Lindsay Carter &middot; BYU IS 201 &middot; 2025</p>
+    </footer>
 
 </body>
 </html>
