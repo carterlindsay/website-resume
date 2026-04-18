@@ -4,8 +4,36 @@
     <meta charset="UTF-8">
     <title>🍎 Fruity Snake: Force Start Edition 🐍</title>
     <style>
+        #back-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #1e3058;
+            padding: 0.6rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 999;
+        }
+        #back-bar a {
+            color: #ffffff;
+            text-decoration: none;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            transition: color 0.2s;
+        }
+        #back-bar a:hover { color: #fde68a; }
+        #back-bar span {
+            color: #8fa9c0;
+            font-size: 0.8rem;
+            font-family: 'Segoe UI', sans-serif;
+        }
         body {
             margin: 0;
+            padding-top: 46px;
             background: #d2cabb;
             display: flex;
             flex-direction: column;
@@ -48,6 +76,11 @@
     </style>
 </head>
 <body>
+
+    <div id="back-bar">
+        <a href="fromScratch.html">&#8592; Back to Mission Page</a>
+        <span>Lindsay Carter — AI Snake Game</span>
+    </div>
 
     <div id="status">Score: <span id="scoreText">0</span></div>
 

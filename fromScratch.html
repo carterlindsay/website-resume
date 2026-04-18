@@ -139,20 +139,20 @@
     <!-- ── TABLEAU EMBED ───────────────────────────────── -->
     <section class="sc-section sc-yellow-bg" id="data">
         <div class="sc-container">
-            <h2 class="sc-section-title">&#128200; The DR on the World Stage</h2>
-            <p class="sc-section-desc">See how the Dominican Republic compares to other countries across key global indicators. Use the interactive controls to filter and explore the data.</p>
+            <h2 class="sc-section-title">&#128214; Church of Jesus Christ Scripture Dashboard</h2>
+            <p class="sc-section-desc">An interactive data visualization exploring patterns across the scriptures of the Church of Jesus Christ of Latter-day Saints. Hover and click to explore the data.</p>
             <div class="sc-tableau-wrap">
-                <div class="tableauPlaceholder" id="viz1234567890" style="position:relative">
+                <div class="tableauPlaceholder" id="viz_tableau" style="position:relative">
                     <noscript>
-                        <a href="https://public.tableau.com/views/WorldIndicators/GDPpercapita">
-                            <img alt="World Indicators — GDP per Capita" src="https://public.tableau.com/static/images/Wo/WorldIndicators/GDPpercapita/1_rss.png" style="border:none">
+                        <a href="https://public.tableau.com/app/profile/nathan.flanagan/viz/ChurchofJesusChristScriptureDashboard/ScripturesAnalysis">
+                            <img alt="Church of Jesus Christ Scripture Dashboard" style="border:none">
                         </a>
                     </noscript>
                     <object class="tableauViz" style="display:none">
                         <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F">
                         <param name="embed_code_version" value="3">
                         <param name="site_root" value="">
-                        <param name="name" value="WorldIndicators/GDPpercapita">
+                        <param name="name" value="ChurchofJesusChristScriptureDashboard/ScripturesAnalysis">
                         <param name="tabs" value="no">
                         <param name="toolbar" value="yes">
                         <param name="animate_transition" value="yes">
@@ -164,20 +164,28 @@
                     </object>
                 </div>
                 <script type="text/javascript">
-                    var divElement = document.getElementById('viz1234567890');
-                    var vizElement = divElement.getElementsByTagName('object')[0];
-                    if (divElement.offsetWidth > 800) {
-                        vizElement.style.width = '100%';
-                        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-                    } else {
-                        vizElement.style.width = '100%';
-                        vizElement.style.height = '500px';
-                    }
-                    var scriptElement = document.createElement('script');
-                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                    var divEl = document.getElementById('viz_tableau');
+                    var vizEl = divEl.getElementsByTagName('object')[0];
+                    vizEl.style.width = '100%';
+                    vizEl.style.height = (divEl.offsetWidth > 800)
+                        ? (divEl.offsetWidth * 0.65) + 'px'
+                        : '620px';
+                    var s = document.createElement('script');
+                    s.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizEl.parentNode.insertBefore(s, vizEl);
                 </script>
             </div>
+        </div>
+    </section>
+
+    <!-- ── AI SNAKE GAME LINK ──────────────────────────── -->
+    <section class="sc-section">
+        <div class="sc-container sc-text-center">
+            <h2 class="sc-section-title sc-centered">&#127918; Want to Play a Game?</h2>
+            <p class="sc-section-desc">I built a snake game with AI! Try it out — eat the fruit, grow the snake, beat your score.</p>
+            <a href="ai.html" class="sc-game-btn">
+                &#9654; Play Fruity Snake
+            </a>
         </div>
     </section>
 

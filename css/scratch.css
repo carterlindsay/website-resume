@@ -375,6 +375,29 @@ img {
     box-shadow: 0 4px 20px rgba(245, 158, 11, 0.12);
 }
 
+/* ── AI GAME LINK BUTTON ──────────────────────────────────── */
+.sc-game-btn {
+    display: inline-block;
+    background-color: #1e3058;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    letter-spacing: 0.04em;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    box-shadow: 0 4px 14px rgba(30, 48, 88, 0.3);
+}
+
+.sc-game-btn:hover {
+    background-color: #4d6080;
+    color: #ffffff;
+    transform: translateY(-2px);
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(30, 48, 88, 0.4);
+}
+
 /* ── FOOTER ───────────────────────────────────────────────── */
 .sc-footer {
     background-color: #1e3058;
