@@ -1,0 +1,410 @@
+/*
+ * scratch.css — Dominican Republic Mission Page
+ * Pure CSS, zero Bootstrap. Built from scratch.
+ *
+ * COLOR PALETTE
+ *   #f59e0b   amber yellow (primary accent)
+ *   #fde68a   light yellow (borders, backgrounds)
+ *   #fffbeb   near-white yellow (section bg)
+ *   #1e3058   deep navy (nav, footer, headings)
+ *   #ffffff   white (body, cards)
+ *   #333333   dark gray (body text)
+ */
+
+/* ── RESET & BASE ─────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', system-ui, Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #333333;
+    background-color: #ffffff;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Open Sans', system-ui, Arial, sans-serif;
+    color: #1e3058;
+    line-height: 1.2;
+}
+
+a {
+    color: #f59e0b;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #d97706;
+    text-decoration: underline;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ── LAYOUT CONTAINERS ────────────────────────────────────── */
+.sc-container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Two-column responsive grid */
+.sc-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Three-column responsive grid */
+.sc-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.sc-text-center {
+    text-align: center;
+}
+
+/* ── STICKY BACK BAR ──────────────────────────────────────── */
+.sc-back-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1e3058;
+    padding: 0.75rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+}
+
+.sc-back-link {
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.sc-back-link:hover {
+    color: #fde68a;
+    text-decoration: none;
+}
+
+.sc-site-name {
+    color: #8fa9c0;
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+}
+
+/* ── IN-PAGE ANCHOR NAVIGATION ────────────────────────────── */
+.sc-page-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #fffbeb;
+    border-bottom: 2px solid #fde68a;
+    padding: 0;
+}
+
+.sc-page-nav a {
+    display: inline-block;
+    padding: 0.8rem 1.25rem;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #92400e;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.sc-page-nav a:hover {
+    color: #1e3058;
+    border-bottom-color: #f59e0b;
+    text-decoration: none;
+}
+
+/* ── HERO BANNER ──────────────────────────────────────────── */
+.sc-hero {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    padding: 5rem 2rem 5.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* White wave cut at the bottom of the hero */
+.sc-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: #ffffff;
+    clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+.sc-hero-tag {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.35rem 1.1rem;
+    border-radius: 2rem;
+    margin-bottom: 1.25rem;
+}
+
+.sc-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.sc-hero-sub {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+    letter-spacing: 0.03em;
+}
+
+/* ── SECTIONS ─────────────────────────────────────────────── */
+.sc-section {
+    padding: 4rem 1.5rem;
+}
+
+.sc-yellow-bg {
+    background-color: #fffbeb;
+}
+
+.sc-section-title {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #1e3058;
+    margin-bottom: 1.75rem;
+}
+
+.sc-centered {
+    text-align: center;
+}
+
+.sc-section-desc {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ── INTRO CARD ───────────────────────────────────────────── */
+.sc-intro-card {
+    max-width: 760px;
+    margin: 0 auto;
+    background-color: #fffbeb;
+    border-left: 5px solid #f59e0b;
+    border-radius: 6px;
+    padding: 2rem 2.5rem;
+}
+
+.sc-intro-card p {
+    font-size: 1.05rem;
+    color: #333;
+    margin-bottom: 0.75rem;
+}
+
+.sc-intro-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* ── DESTINATION NESTED LIST ──────────────────────────────── */
+.sc-destination-list {
+    list-style: none;
+    counter-reset: dest-counter;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.sc-destination-list > li {
+    counter-increment: dest-counter;
+    background-color: #ffffff;
+    border: 2px solid #fde68a;
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem 1.25rem 4rem;
+    margin-bottom: 1rem;
+    position: relative;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.sc-destination-list > li:hover {
+    border-color: #f59e0b;
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.15);
+}
+
+.sc-destination-list > li::before {
+    content: counter(dest-counter);
+    position: absolute;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+    height: 2rem;
+    background-color: #f59e0b;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 0.9rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sc-destination-list > li > strong {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1e3058;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Embedded unordered list inside the ordered list */
+.sc-destination-list > li > ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+    margin: 0;
+}
+
+.sc-destination-list > li > ul > li {
+    font-size: 0.9rem;
+    color: #444;
+    padding: 0.15rem 0;
+    line-height: 1.6;
+}
+
+.sc-place-name {
+    font-weight: 700;
+    color: #92400e;
+}
+
+/* ── FOOD CARDS ───────────────────────────────────────────── */
+.sc-food-card {
+    background-color: #ffffff;
+    border: 2px solid #fde68a;
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.sc-food-label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #92400e;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #fde68a;
+}
+
+.sc-food-card ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+}
+
+.sc-food-card ul li {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 0.45rem;
+    line-height: 1.6;
+}
+
+/* ── PHOTO COLLAGE ────────────────────────────────────────── */
+.sc-collage {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.sc-collage img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid #fde68a;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.sc-collage img:hover {
+    transform: scale(1.04);
+    border-color: #f59e0b;
+}
+
+/* ── VIDEO ────────────────────────────────────────────────── */
+.sc-video-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 3px solid #fde68a;
+    box-shadow: 0 8px 32px rgba(245, 158, 11, 0.2);
+}
+
+/* ── TABLEAU EMBED ────────────────────────────────────────── */
+.sc-tableau-wrap {
+    background-color: #ffffff;
+    border: 2px solid #fde68a;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.12);
+}
+
+/* ── FOOTER ───────────────────────────────────────────────── */
+.sc-footer {
+    background-color: #1e3058;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.sc-back-btn {
+    display: inline-block;
+    background-color: #f59e0b;
+    color: #1e3058;
+    font-weight: 800;
+    font-size: 0.95rem;
+    text-decoration: none;
+    padding: 0.85rem 2.25rem;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.sc-back-btn:hover {
+    background-color: #fbbf24;
+    color: #1e3058;
+    transform: translateY(-2px);
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+}
+
+.sc-footer-note {
+    color: #8fa9c0;
+    font-size: 0.8rem;
+    margin-top: 0.75rem;
+}

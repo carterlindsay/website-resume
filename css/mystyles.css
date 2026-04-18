@@ -1,0 +1,419 @@
+/*
+ * Custom theme overrides — Lindsay Carter
+ * Palette:
+ *   #eaf0f5  lightest (backgrounds)
+ *   #b9cfe0  light blue (subtle accents)
+ *   #8fa9c0  medium steel blue (borders, secondary)
+ *   #4d6080  slate blue (hover states, subheadings)
+ *   #1e3058  deep navy (primary accents, navbar, footer)
+ */
+
+/* ── NAVBAR ─────────────────────────────────────────────── */
+#mainNav {
+    background-color: #1e3058 !important;
+    border-bottom: 1px solid rgba(185, 207, 224, 0.25) !important;
+}
+#mainNav .navbar-brand {
+    color: #eaf0f5 !important;
+}
+#mainNav .navbar-brand:hover,
+#mainNav .navbar-brand:focus {
+    color: #b9cfe0 !important;
+}
+#mainNav .navbar-toggler {
+    color: #b9cfe0 !important;
+    border-color: rgba(185, 207, 224, 0.4) !important;
+}
+#mainNav .navbar-nav > li.nav-item > a.nav-link {
+    color: #b9cfe0 !important;
+}
+#mainNav .navbar-nav > li.nav-item > a.nav-link:hover,
+#mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
+    color: #eaf0f5 !important;
+}
+@media (min-width: 992px) {
+    #mainNav {
+        background-color: #1e3058 !important;
+    }
+    #mainNav.is-fixed {
+        background-color: rgba(30, 48, 88, 0.97) !important;
+        border-bottom: 1px solid #4d6080 !important;
+    }
+    #mainNav.is-fixed .navbar-brand {
+        color: #eaf0f5 !important;
+    }
+    #mainNav.is-fixed .navbar-brand:hover,
+    #mainNav.is-fixed .navbar-brand:focus {
+        color: #b9cfe0 !important;
+    }
+    #mainNav.is-fixed .navbar-nav > li.nav-item > a {
+        color: #b9cfe0 !important;
+    }
+    #mainNav.is-fixed .navbar-nav > li.nav-item > a:hover,
+    #mainNav.is-fixed .navbar-nav > li.nav-item > a:focus {
+        color: #eaf0f5 !important;
+    }
+}
+
+/* ── MASTHEAD / PAGE HEADER ──────────────────────────────── */
+header.masthead {
+    background-color: #4d6080 !important;
+}
+header.masthead:before {
+    background: linear-gradient(
+        to bottom,
+        rgba(30, 48, 88, 0.88) 0%,
+        rgba(77, 96, 128, 0.70) 100%
+    ) !important;
+    opacity: 1 !important;
+}
+
+/* ── RESUME SECTION CARDS ────────────────────────────────── */
+.post-preview {
+    background-color: #f5f8fb;
+    border-left: 4px solid #8fa9c0;
+    border-radius: 6px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 0.5rem;
+}
+.post-preview h2.post-title {
+    color: #1e3058;
+    margin-top: 0 !important;
+}
+h3.post-subtitle {
+    color: #4d6080;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-top: 1.4rem;
+    margin-bottom: 0.15rem;
+    font-family: "Open Sans", sans-serif;
+}
+p.post-meta {
+    color: #8fa9c0 !important;
+    font-style: italic;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+.post-preview ul {
+    margin-top: 0.25rem;
+    padding-left: 1.25rem;
+}
+.post-preview ul li {
+    margin-bottom: 0.3rem;
+    color: #333;
+}
+
+/* ── DIVIDERS ────────────────────────────────────────────── */
+hr.my-4 {
+    border-color: #b9cfe0;
+    opacity: 0.5;
+}
+
+/* ── LINKS ───────────────────────────────────────────────── */
+a {
+    color: #4d6080;
+}
+a:hover {
+    color: #1e3058;
+}
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+footer {
+    background-color: #1e3058;
+}
+footer .text-muted {
+    color: #b9cfe0 !important;
+}
+footer.border-top {
+    border-color: #4d6080 !important;
+}
+
+/* ── CONTACT FORM BUTTON ─────────────────────────────────── */
+.btn-primary {
+    background-color: #4d6080 !important;
+    border-color: #1e3058 !important;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #1e3058 !important;
+    border-color: #1e3058 !important;
+}
+
+/* ── ABOUT PAGE BIO TEXT ─────────────────────────────────── */
+main p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* ── ACTIVE NAV LINK (set by main.js) ───────────────────── */
+#mainNav .nav-link.nav-active {
+    color: #ffffff !important;
+    border-bottom: 2px solid #8fa9c0;
+    padding-bottom: calc(1rem - 2px);
+}
+
+/* ── SCROLL-TO-TOP BUTTON ────────────────────────────────── */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: #1e3058;
+    color: #eaf0f5;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(30, 48, 88, 0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, background-color 0.2s ease, transform 0.2s ease;
+    z-index: 9999;
+}
+#scrollTopBtn.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+#scrollTopBtn:hover {
+    background-color: #4d6080;
+    transform: translateY(-2px);
+}
+
+/* ── FADE-IN ANIMATIONS (triggered by main.js) ───────────── */
+.fade-section {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.fade-section.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── HERO PROFILE CARD (index.html) ─────────────────────── */
+.lc-hero {
+    background: linear-gradient(135deg, #1e3058 0%, #4d6080 100%);
+    background-image: url('../assets/img/home-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding-bottom: 3rem;
+}
+.lc-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(30,48,88,0.88) 0%, rgba(77,96,128,0.78) 100%);
+}
+.lc-hero .container {
+    position: relative;
+    z-index: 1;
+    padding-top: calc(5rem + 57px);
+}
+.lc-card {
+    display: flex;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.35);
+    max-width: 820px;
+    margin: 0 auto;
+}
+.lc-card-photo {
+    flex: 0 0 42%;
+    max-width: 42%;
+    overflow: hidden;
+}
+.lc-card-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    filter: grayscale(12%);
+}
+.lc-card-info {
+    flex: 1;
+    padding: 3rem 2.5rem;
+    background: #f5f8fb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.lc-name {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.1rem;
+    font-weight: 300;
+    color: #1e3058;
+    margin: 0 0 0.4rem;
+    letter-spacing: -0.02em;
+}
+.lc-title {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: #4d6080;
+    text-transform: uppercase;
+    margin: 0 0 1.5rem;
+}
+.lc-divider {
+    width: 2.5rem;
+    height: 2px;
+    background: #8fa9c0;
+    margin-bottom: 1.5rem;
+}
+.lc-detail {
+    font-size: 0.875rem;
+    color: #444;
+    margin-bottom: 0.55rem;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+.lc-detail i {
+    color: #8fa9c0;
+    width: 1rem;
+    text-align: center;
+    flex-shrink: 0;
+}
+.lc-social {
+    text-align: center;
+    padding: 1.25rem 0 0.25rem;
+    max-width: 820px;
+    margin: 0 auto;
+}
+.lc-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    background: rgba(255,255,255,0.14);
+    color: #eaf0f5;
+    border-radius: 50%;
+    margin: 0 0.3rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.22);
+    transition: background 0.2s, border-color 0.2s;
+}
+.lc-social a:hover {
+    background: rgba(255,255,255,0.28);
+    color: #fff;
+    border-color: rgba(255,255,255,0.55);
+}
+@media (max-width: 640px) {
+    .lc-card { flex-direction: column; }
+    .lc-card-photo { flex: none; max-width: 100%; height: 280px; }
+    .lc-card-info { padding: 1.75rem; }
+    .lc-name { font-size: 1.7rem; }
+}
+
+/* ── SECTION QUICK-NAV (index.html) ─────────────────────── */
+.section-nav {
+    background: #f5f8fb;
+    border-bottom: 1px solid #b9cfe0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.section-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.section-nav ul li a {
+    display: block;
+    padding: 0.85rem 1.4rem;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #4d6080;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+.section-nav ul li a:hover {
+    color: #1e3058;
+    border-bottom-color: #8fa9c0;
+}
+
+/* ── MISSION LINK CARD (about.html) ─────────────────────── */
+.mission-link-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    background: linear-gradient(135deg, #f5f8fb 0%, #eaf0f5 100%);
+    border: 2px solid #b9cfe0;
+    border-radius: 10px;
+    padding: 1.75rem;
+    text-decoration: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.mission-link-card:hover {
+    border-color: #8fa9c0;
+    box-shadow: 0 4px 18px rgba(77,96,128,0.15);
+}
+.mission-link-icon {
+    font-size: 2.2rem;
+    color: #8fa9c0;
+    flex-shrink: 0;
+    padding-top: 0.1rem;
+}
+.mission-link-card h5 {
+    color: #1e3058;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+.mission-link-card p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.75rem !important;
+    line-height: 1.5;
+}
+.mission-link-arrow {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #4d6080;
+    letter-spacing: 0.03em;
+}
+
+/* ══════════════════════════════════════════════════════════
+   FROM-SCRATCH PAGE (Dominican Republic)
+   ══════════════════════════════════════════════════════════ */
+.collage {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding-top: 60px;
+}
+.collage img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 5px solid white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.video-container {
+    text-align: center;
+    margin: 40px auto;
+    width: 100%;
+}
+.text-box {
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 30px;
+    border-radius: 15px;
+}
